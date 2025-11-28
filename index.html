@@ -12,12 +12,19 @@
 
 
        <div class = "input-group">
-        <label for = "celciusInput">Introduce la temperatura en Celsius (°C): </label>
-        <input type="number" id="celciusInput" placeholder="poner temperatura en °C">
+        <label for = "celsiusInput">Introduce la temperatura en Celsius (°C): </label>
+        <input type="number" id="celsiusInput" placeholder="poner temperatura en °C">
         <button id="converButton">Convertir</button>
        </div>
 
-       <div id="error-mensaje" class="error-mensaje"></div>
+       <div id="results-area" class="results-area">
+        <h2>Resultados de la Conversión:</h2>
+        <p id ="celsiusDisplay" class="conversion-item">Celsius (°C): </p>
+        <p id ="kelvinOutput" class="conversion-item">Kelvin (K): </p>
+        <p id ="fahrenheitOutput" class="conversion-item">Fahrenheit (°F): </p>
+       </div>
+
+       <div id="errorMessage" class="error-mensaje"></div>
     </div>
 
     <script src="./js/main.js"></script>
