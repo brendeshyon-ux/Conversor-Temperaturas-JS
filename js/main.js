@@ -1,7 +1,6 @@
 document.addEventListener('DOMContentLoaded', function () {
     const celsiusInput = document.getElementById('celsiusInput');
     const converButton = document.getElementById('converButton');
-    const celsiusDisplay = document.getElementById('celsiusDisplay');
     const kelvinOutput = document.getElementById('kelvinOutput');
     const fahrenheitOutput = document.getElementById('fahrenheitOutput');
     const errorMessage = document.getElementById('errorMessage');
@@ -11,9 +10,8 @@ document.addEventListener('DOMContentLoaded', function () {
     const FAHRENHEIT_OFFSET = 32;
 
     const clearResults = () => {
-        celsiusDisplay.textContent = 'Celsius: ';
-        kelvinOutput.textContent = 'Kelvin: ';
-        fahrenheitOutput.textContent = 'Fahrenheit: ';
+        kelvinOutput.textContent = 'Grados Kelvin: ';
+        fahrenheitOutput.textContent = 'Grados Fahrenheit: ';
         errorMessage.style.display = 'none';
         errorMessage.textContent = '';
     };
@@ -25,9 +23,8 @@ document.addEventListener('DOMContentLoaded', function () {
         const celsiusValue = parseFloat(inputStr);
 
         if (inputStr === '' || isNaN(celsiusValue)) {
-            console.log(`ERROR: Escribe un número, se recibió:  "${inputStr}"`);
+            errorMessage.textContent = 'Por favor, ingrese un valor numérico válido para Celsius.';
             errorMessage.style.display = 'block';
-
             celsiusInput.value = '';
             return;
         }
@@ -36,13 +33,12 @@ document.addEventListener('DOMContentLoaded', function () {
         const fahrenheitValue = (celsiusValue * FAHRENHEIT_MULTIPLIER) + FAHRENHEIT_OFFSET;
 
         console.log("Conversion exitosa:");
-        console.log(`Celsius: ${celsiusValue.toFixed(2)}`);
-        console.log(`Kelvin: ${kelvinValue.toFixed(2)}`);
-        console.log(`Fahrenheit: ${fahrenheitValue.toFixed(2)}`);
-
-        celsiusDisplay.textContent = `Celsius: ${celsiusValue.toFixed(2)} °C`;
-        kelvinOutput.textContent = `Kelvin: ${kelvinValue.toFixed(2)} K`;
-        fahrenheitOutput.textContent = `Fahrenheit: ${fahrenheitValue.toFixed(2)} °F`;
+        console.log(`Celsius (°C): ${celsiusValue.toFixed(2)}`);
+        console.log(`Grados Kelvin:${kelvinValue.toFixed(2)}`);
+        console.log(`Grados Fahrenheit: ${fahrenheitValue.toFixed(2)}`);
+        
+        kelvinOutput.textContent = `Grados Kelvin: ${kelvinValue.toFixed(2)} °K`;
+        fahrenheitOutput.textContent = `Grados Fahrenheit: ${fahrenheitValue.toFixed(2)} °F`;
     };
 
     converButton.addEventListener('click', convertTemperature);

@@ -1,0 +1,119 @@
+:root {
+    --color-bg-main: #FCF5EE;
+    --color-bg-card: #FFC4C4;
+    --color-accent: #EE6983;
+    --color-text-main: #850E35;
+}
+
+* {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+    font-family: 'Segoe UI', Tahoma, Verdana, sans-serif;
+}
+
+body {
+    background-color: var(--color-bg-main);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    min-height: 100vh;
+    padding: 20px;
+}
+
+.container {
+    background-color: var(--color-bg-card);
+    border-radius: 15px;
+    padding: 40px;
+    box-shadow: 0 10px 25px rgba(133, 14, 53, 0.15);
+    max-width: 500px;
+    width: 100%;
+    text-align: center;
+}
+
+h1 {
+    color: var(--color-accent);
+    margin-bottom: 5px;
+    font-size: 2em;
+}
+
+.subtitle {
+    color: var(--color-text-main);
+    margin-bottom: 30px;
+    font-size: 1.1em;
+}
+
+/* ------------
+ Input y Botón 
+ ------------- */
+
+label {
+    display: block;
+    color: var(--color-text-main);
+    margin-bottom: 10px;
+    font-weight: bold;
+}
+
+#celsiusInput {
+    padding: 10px;
+    width: calc(100%); /* Ajuste para el botón */
+    border: 2px solid var(--color-accent);
+    border-radius: 8px;
+    font-size: 1em;
+    outline: none;
+}
+
+#celsiusInput:focus {
+    border-color: var(--color-text-main);
+}
+
+#converButton {
+    padding: 10px 20px;
+    background-color: var(--color-accent);
+    color: white;
+    border: none;
+    border-radius:8px;
+    font-size: 1em;
+    cursor: pointer;
+    margin-top: 10px;
+}
+
+#convertButton:hover {
+    background-color: var(--color-text-main);
+}
+
+/* ----------- 
+Área de Resultados 
+----------------- */
+.results-area {
+    background-color: var(--color-bg-main);
+    border-radius: 10px;
+    padding: 20px;
+    margin-top: 20px;
+    border: 1px solid var(--color-accent);
+}
+
+.results-area h2 {
+    color: var(--color-accent);
+    margin-bottom: 15px;
+    border-bottom: 2px dashed var(--color-accent);
+    padding-bottom: 5px;
+}
+
+.conversion-item {
+    color: var(--color-text-main);
+    text-align: left;
+    margin-bottom: 8px;
+    font-size: 1.1em;
+    font-weight: 500;
+}
+
+.error-mensaje {
+    color: white;
+    background-color: var(--color-text-main);
+    border-radius: 8px;
+    padding: 10px;
+    margin-top: 20px;
+    font-weight: bold;
+    display: none;
+}
