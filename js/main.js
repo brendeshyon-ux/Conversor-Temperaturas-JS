@@ -36,11 +36,10 @@ document.addEventListener('DOMContentLoaded', function () {
         console.log(`Celsius (°C): ${celsiusValue.toFixed(2)}`);
         console.log(`Grados Kelvin:${kelvinValue.toFixed(2)}`);
         console.log(`Grados Fahrenheit: ${fahrenheitValue.toFixed(2)}`);
-        
+
         kelvinOutput.textContent = `Grados Kelvin: ${kelvinValue.toFixed(2)} °K`;
         fahrenheitOutput.textContent = `Grados Fahrenheit: ${fahrenheitValue.toFixed(2)} °F`;
     };
 
     converButton.addEventListener('click', convertTemperature);
-
 });
